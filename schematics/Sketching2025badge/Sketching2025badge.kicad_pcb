@@ -1657,6 +1657,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "1d19f7f3-d72a-4ec5-b802-95dddfb1dba4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/03f6694a-17fe-4ad1-b5ca-a9a996f7b54e")
 		(sheetname "/")
@@ -3354,6 +3368,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "24874d99-a3c5-4a69-b663-f7584e73ed60")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/e3d391c2-b668-442e-acb8-7ebc60857a54")
 		(sheetname "/")
@@ -3553,6 +3581,20 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "696a15ea-883a-4757-8074-f336f8e9669a")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -5247,6 +5289,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "3db731ae-b852-4cf5-bb77-50066171e025")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/5f01e457-11f5-40b1-b05c-e0042bad7e33")
 		(sheetname "/")
@@ -6102,6 +6158,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 90)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "7178a3a9-e556-47b1-a2ab-e561d1513281")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/645c1c39-87e5-450e-ac8f-b21ab74bdc08")
 		(sheetname "/")
@@ -6303,6 +6373,20 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "15ade88e-18a5-4551-adba-7a3b046c5bf1")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -7511,6 +7595,20 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC Part" "C434425"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "8a007e7b-9677-4900-8e67-00e15b78e3e4")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -8936,6 +9034,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "e8d9d199-6a1c-43db-be61-4b80fedff028")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/5d870086-2a58-40ff-9068-de819a5faa06")
 		(sheetname "/")
@@ -10090,6 +10202,20 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "05eddf33-0438-4897-a7c7-4b105f594432")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/3e72af3d-b83d-44b3-bc7c-1a82da8321fb")
 		(sheetname "/")
@@ -10277,6 +10403,20 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "7cce7f45-faf1-40c8-95bc-017ab3b8dc01")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -10687,6 +10827,20 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "LCSC Part" "C1590"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "ae8be809-d13f-4611-8415-fbffacbc63b1")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 				(justify mirror)
@@ -31348,74 +31502,6 @@
 		(uuid "ba78f2c8-cb75-4675-8a34-48b79ef47112")
 	)
 	(zone
-		(net 0)
-		(net_name "")
-		(layer "F.Cu")
-		(uuid "7251b1c0-5d67-410a-a1d3-3d3bbd917257")
-		(name "keepled2")
-		(hatch edge 0.5)
-		(connect_pads
-			(clearance 0)
-		)
-		(min_thickness 0.25)
-		(filled_areas_thickness no)
-		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
-			(copperpour not_allowed)
-			(footprints allowed)
-		)
-		(placement
-			(enabled no)
-			(sheetname "")
-		)
-		(fill
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-		)
-		(polygon
-			(pts
-				(xy 102.4 105.2) (xy 104.3 103.7) (xy 105.3 102) (xy 105.6 100) (xy 100.000001 100) (xy 94.4 100)
-				(xy 94.6 101.5) (xy 95.3 103.1) (xy 96.4 104.4) (xy 97.8 105.2) (xy 100 105.7)
-			)
-		)
-	)
-	(zone
-		(net 0)
-		(net_name "")
-		(layer "F.Cu")
-		(uuid "f8464d69-9263-47a3-9b94-49bca5bca300")
-		(name "keepled2")
-		(hatch edge 0.5)
-		(connect_pads
-			(clearance 0)
-		)
-		(min_thickness 0.25)
-		(filled_areas_thickness no)
-		(keepout
-			(tracks not_allowed)
-			(vias not_allowed)
-			(pads not_allowed)
-			(copperpour not_allowed)
-			(footprints allowed)
-		)
-		(placement
-			(enabled no)
-			(sheetname "")
-		)
-		(fill
-			(thermal_gap 0.5)
-			(thermal_bridge_width 0.5)
-		)
-		(polygon
-			(pts
-				(xy 97.4 94.9) (xy 95.6 96.4) (xy 94.8 97.8) (xy 94.4 100) (xy 100 100) (xy 105.6 100) (xy 105.5 98.6)
-				(xy 104.7 96.9) (xy 103.6 95.7) (xy 102.2 94.8) (xy 100 94.3)
-			)
-		)
-	)
-	(zone
 		(net 1)
 		(net_name "GND")
 		(layer "B.Cu")
@@ -34141,7 +34227,11 @@
 	)
 	(group ""
 		(uuid "b16c33c9-2501-44aa-85c0-db998b7869da")
-		(members "9d91af98-6ed0-44d7-9bf3-dc32664d7a65" "b7283ebd-2364-4522-ab62-c93388d6da7e")
+		(members "87e171af-7f4a-484a-a07e-b18bd1738ae4" "9d91af98-6ed0-44d7-9bf3-dc32664d7a65"
+			"a92a25b9-dd74-4727-8893-4c26edcc7384" "b7283ebd-2364-4522-ab62-c93388d6da7e"
+			"b9c4d0b1-6f69-4661-b06c-3aa0def72c46" "ca5928f1-b158-4ec9-bcc6-3367f76c2473"
+			"d2f3faba-ddc4-4ebc-880d-db18f162cabd" "eb694c42-b350-4ecc-8b66-d98159701027"
+		)
 	)
 	(group ""
 		(uuid "1bf00fb2-3a56-4291-be1f-c8e9bf45fafe")

@@ -2691,7 +2691,7 @@
 		)
 		(uuid "5d32ebc6-be06-4318-ba38-8bfd63a06447")
 	)
-	(text "USB-Serial to UPDI\n-------------\nTX\nRX\nV+\nGnd\n"
+	(text "USB-Serial to UPDI\n-------------\nTX\nRX\n3v3\nGnd\n"
 		(exclude_from_sim no)
 		(at 221.488 24.892 0)
 		(effects
@@ -4151,6 +4151,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 125.73 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "2df4bb8a-c319-485a-888f-93b622a0afe8")
 		)
@@ -5350,6 +5359,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 63.5 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b2db7bc0-98d9-4077-b37b-4c6cdfdc8858")
 		)
@@ -6463,6 +6481,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 138.43 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "54878eae-ddeb-44c2-bb7c-d9b77ab9926c")
 		)
@@ -6525,6 +6552,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 114.3 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C1590"
 			(at 114.3 158.75 0)
 			(effects
 				(font
@@ -6863,6 +6899,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 52.07 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C1590"
 			(at 52.07 158.75 0)
 			(effects
 				(font
@@ -9113,6 +9158,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 100.33 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b76e9b0f-7742-45b2-b6cb-39928a8ec81b")
 		)
@@ -9438,6 +9492,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 120.65 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C434425"
 			(at 120.65 35.56 0)
 			(effects
 				(font
@@ -10323,6 +10386,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 134.62 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "12266194-c0eb-4c75-a304-2274402a4691")
 		)
@@ -10581,6 +10653,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 149.86 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C1590"
 			(at 149.86 158.75 0)
 			(effects
 				(font
@@ -10923,6 +11004,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC Part" "C1590"
+			(at 76.2 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5f5c18d2-de34-4415-9387-9b4393b8ed2e")
 		)
@@ -11116,6 +11206,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 87.63 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C1590"
 			(at 87.63 158.75 0)
 			(effects
 				(font
