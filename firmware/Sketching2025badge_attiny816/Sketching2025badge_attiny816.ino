@@ -34,7 +34,7 @@
 // update: ahh seems like tinyNeoPixel_Static calls `noInterrupts()` so we'll mirror that
 
 #define LED_BRIGHTNESS  80     // range 0-255
-#define LED_UPDATE_MILLIS (2)
+#define LED_UPDATE_MILLIS (10)
 #define TOUCH_THRESHOLD_ADJ (1.2)
 #define FPOS_FILT (0.05)
 
@@ -123,7 +123,7 @@ void setup() {
 }
 
 void touch_recalibrate() {
-    for( int i=0; i< touch_count; i++) { 
+    for(int i=0; i< touch_count; i++) { 
       uint16_t v = touches[i].recalibrate();
       touches[i].threshold = v * TOUCH_THRESHOLD_ADJ; // auto threshold doesn't work
     }
