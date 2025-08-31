@@ -45,6 +45,8 @@ In the Tools menu, set the chip parameters as:
 - Programmer: "Serial UDPI - SLOW 57600"
 - (leave everything else as default)
 
+When uploading, use "Upload Using Programmer" instead of the normal "Upload".
+
 
 ### Arduino-CLI install
 
