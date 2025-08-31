@@ -7,6 +7,10 @@ Badge for Sketching in Hardware 2025
 
 * 30Aug2025 - Prototyp0 PCBA w/ batts on face, from JLC (with oops mask hole in center)
 
+  https://github.com/user-attachments/assets/092c7233-f480-4e2a-861c-cc95c8bd24c3
+
+
+
 
 # Renders
 
