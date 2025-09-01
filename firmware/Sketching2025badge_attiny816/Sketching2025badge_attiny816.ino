@@ -40,20 +40,19 @@ TouchyTouch touches[touch_count];
 volatile uint8_t led_buf[NUM_LEDS*3];  // RGB LEDs: 3 bytes per LED
 
 bool do_startup_demo = true;
-uint8_t ledr, ledg, ledb;  // FIXME
-uint8_t pos = 0;
-uint8_t touched = 0;
-bool held = false;
-uint16_t touch_timer = 0;
+uint8_t pos = 0;  // color wheel position
+uint8_t touched = 0;  // bit-field of touches
+bool held = false;   // is a touch held (any touch)
+uint16_t fade_timer = 0;
 uint32_t last_debug_time;
 uint32_t last_led_time;
-uint32_t last_touch_millis = 0;
+uint32_t last_touch_millis = 0;  // last time any touch was pressed
 
 
-void startup_demo(uint8_t delay_millis=15) {
+void startup_demo(uint8_t delay_millis=15, uint8_t wheel_step=50) {
   for(byte i=0; i<255; i++) { 
     for(byte n=0; n < NUM_LEDS; n++) { 
-      uint32_t c = wheel(i + n*50);
+      uint32_t c = wheel(i + n * wheel_step);
       uint8_t r = (c>>16) & 0xff, g = (c>>8) & 0xff, b = c&0xff;
       pixel_set(n, r,g,b);
     }
@@ -86,21 +85,25 @@ void touch_recalibrate() {
 
 // update touch input state
 // must be called within a block that's timed (like if(now-update_millis))
-void update_touch() { 
+void update_touch(uint32_t now) { 
+  uint8_t touched_last = touched;
   touched = 0;
   for (int i = 0; i < touch_count; i++) {
     touches[i].update();
     touched |= (touches[i].touched() << i);
   }
-  if (touched) { 
-    touch_timer = touch_timer < 60000 ? touch_timer+1 : touch_timer;
-    //touch_timer = min(touch_timer+1, 60000);
-    if (touch_timer > 100) {  // held for a while
+
+  if (touched) {
+    if (touched != touched_last) { 
+      last_touch_millis = now;  // record when touch changed
+    }
+    if (now - last_touch_millis > 500) { 
       held = true;
     }
   }
-  else { 
+  else {  // on release
     held = false;
+    fade_timer = 1000;
   }
 }
 
@@ -111,7 +114,7 @@ void loop() {
     startup_demo();
     touch_recalibrate();  // recalibrate in case pads touched on power up or unstable power
     do_startup_demo = false;
-    touch_timer = 1000;
+    fade_timer = 1000;
   }
   
   // LED update
@@ -120,24 +123,28 @@ void loop() {
   if( now - last_led_time > LED_UPDATE_MILLIS ) {  // only update neopixels every N msec
     last_led_time = now;
 
-    update_touch();  
+    update_touch(now);  
 
     digitalWrite(LED_STATUS_PIN, held ? HIGH : LOW);  // simple held status indicator
 
-    if (touched) { 
-      last_touch_millis = now;
-    }
-
     if (now - last_touch_millis > LED_IDLE_MILLIS) {
-      startup_demo(5);
+      startup_demo(5, 50);
       last_touch_millis = now;
     }
     
-    // start at a different location on the colorwheel depending on button
-    if      (touches[0].pressed()) { pos = 85*0; }
-    else if (touches[1].pressed()) { pos = 85*1; }
-    else if (touches[2].pressed()) { pos = 85*2; }
+    // show how to handle touch events
+    //   start at a different location on the colorwheel depending on button
+    if (touches[0].pressed()) { 
+      pos = 85*0; 
+    }
+    else if (touches[1].pressed()) { 
+      pos = 85*1; 
+    }
+    else if (touches[2].pressed()) { 
+      pos = 85*2; 
+    }
 
+    // act on touch state
     if (touched) {
       if (held) { 
         pos += 1;  // rotate color wheel while held
@@ -148,10 +155,10 @@ void loop() {
         pixel_set(n, r,g,b);
       }
     }
-
-    // fade down LEDs on release
-    if( !held ) { 
-      if( touch_timer-- ) { 
+    else {  // not touched
+      // fade down LEDs on release
+      if( fade_timer ) { 
+        fade_timer--;
         pixel_fade_all(1);
       }
     }
@@ -184,6 +191,7 @@ uint32_t wheel(byte WheelPos) {
   return pack_color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }
 
+// pack R,G,B bytes into 32-bits 
 static uint32_t pack_color(uint8_t r, uint8_t g, uint8_t b) {
   return ((uint32_t)r << 16) | ((uint32_t)g <<  8) | b;
 }
