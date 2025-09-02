@@ -40,7 +40,7 @@ Pick the board type in Tools / Board as "megaTinyCore" -> "ATtiny3226/3216/../81
 In the Tools menu, set the chip parameters as:
 
 - Chip: "ATtiny816"
-- Clock: "10 MHz internal"
+- Clock: "8 MHz internal"
 - Printf: "minimal"
 - Programmer: "Serial UDPI - SLOW 57600"
 - (leave everything else as default)
@@ -65,17 +65,16 @@ The badge uses the ATtiny816 chip.  This is supported by the MegaTinyAVR core.
 arduino-cli core install megatinycore:megaavr  --additional-urls https://drazzy.com/package_drazzy.com_index.json
  ```
 
-#### (optional) Show some details on the core:
+#### Show some details on the core (optional):
 
 ```sh
 arduino-cli board details -b megaTinyCore:megaavr:atxy6
 ```
 
-
 #### Compile:
 
 ```sh
-arduino-cli compile --verbose --fqbn megaTinyCore:megaavr:atxy6:chip=816,printf=minimal \
+arduino-cli compile --verbose --fqbn megaTinyCore:megaavr:atxy6:chip=816,printf=minimal,clock=8internal \
             --build-path=$(pwd)/build Sketching2025badge_attiny816
 ```
 
