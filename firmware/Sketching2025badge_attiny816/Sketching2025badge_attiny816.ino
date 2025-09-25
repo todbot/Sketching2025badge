@@ -21,9 +21,9 @@
 
 #define LED_BRIGHTNESS  80     // range 0-255
 #define LED_UPDATE_MILLIS (15)
-#define LED_IDLE_MILLIS (10*1000)   // 30 seconds
+#define LED_IDLE_MILLIS (30*1000)   // 30 seconds
 #define TOUCH_THRESHOLD_ADJ (1.2)
-#define FPOS_FILT (0.05)
+//#define FPOS_FILT (0.05)
 
 // note these pin numbers are the megatinycore numbers: 
 // https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/variants/txy6/pins_arduino.h
@@ -39,19 +39,20 @@ const int touch_count = sizeof(touch_pins) / sizeof(int);
 TouchyTouch touches[touch_count];
 volatile uint8_t led_buf[NUM_LEDS*3];  // RGB LEDs: 3 bytes per LED
 
-bool do_startup_demo = true;
-uint8_t pos = 0;  // color wheel position
-uint8_t touched = 0;  // bit-field of touches
-bool held = false;   // is a touch held (any touch)
-uint16_t fade_timer = 0;
 uint32_t last_debug_time;
 uint32_t last_led_time;
 uint32_t last_touch_millis = 0;  // last time any touch was pressed
+uint16_t fade_timer = 0;
+uint8_t color_mode = 0;
+uint8_t pos = 0;  // color wheel position
+uint8_t touched = 0;  // bit-field of touches
+bool held = false;   // is a touch held (any touch)
+bool do_startup_demo = true;
 
 
-void startup_demo(uint8_t delay_millis=15, uint8_t wheel_step=50) {
-  for(byte i=0; i<255; i++) { 
-    for(byte n=0; n < NUM_LEDS; n++) { 
+void pattern1_demo(uint8_t delay_millis=15, uint8_t wheel_step=50) {
+  for(int i=0; i<255; i++) { 
+    for(int n=0; n < NUM_LEDS; n++) { 
       uint32_t c = wheel(i + n * wheel_step);
       uint8_t r = (c>>16) & 0xff, g = (c>>8) & 0xff, b = c&0xff;
       pixel_set(n, r,g,b);
@@ -62,6 +63,19 @@ void startup_demo(uint8_t delay_millis=15, uint8_t wheel_step=50) {
   }
 }
 
+void pattern2(uint8_t pos, uint8_t color_mode) {
+  for(int n=0; n < NUM_LEDS; n++) {   // rainbow across the LEDs
+    uint32_t c = wheel(pos + n*10);
+    uint8_t r = (c>>16) & 0xff,  g = (c>>8) & 0xff,  b = c&0xff; // unpack 24-bit color
+    if(color_mode==1) {
+      if(millis()%10 == 0) {   // this does not work
+        r /= 2; g /= 2; b /= 2;  // darken 50%
+      }
+    }
+    pixel_set(n, r,g,b);
+  }
+}
+
 void setup() {
   MySerial.begin(115200);
   MySerial.println("\r\nWelcome to Sketching2025!");
@@ -69,7 +83,7 @@ void setup() {
   pinMode(LED_STATUS_PIN, OUTPUT);
   pinMode(NEOPIXEL_PIN, OUTPUT);
 
-  // Touch buttons
+  // touch buttons
   for (int i = 0; i < touch_count; i++) {
     touches[i].begin( touch_pins[i] );
     touches[i].threshold = touches[i].raw_value * TOUCH_THRESHOLD_ADJ; // auto threshold doesn't work
@@ -94,11 +108,12 @@ void update_touch(uint32_t now) {
   }
 
   if (touched) {
+    fade_timer = 0;
     if (touched != touched_last) { 
       last_touch_millis = now;  // record when touch changed
     }
     if (now - last_touch_millis > 500) { 
-      held = true;
+      held = true;  // note held if touched more than 0.5 secs
     }
   }
   else {  // on release
@@ -111,7 +126,7 @@ void update_touch(uint32_t now) {
 void loop() {
 
   if(do_startup_demo) { 
-    startup_demo();
+    pattern1_demo();
     touch_recalibrate();  // recalibrate in case pads touched on power up or unstable power
     do_startup_demo = false;
     fade_timer = 1000;
@@ -123,22 +138,22 @@ void loop() {
   if( now - last_led_time > LED_UPDATE_MILLIS ) {  // only update neopixels every N msec
     last_led_time = now;
 
-    update_touch(now);  
+    update_touch(now);   // updates toucheed and touches[] 
 
     digitalWrite(LED_STATUS_PIN, held ? HIGH : LOW);  // simple held status indicator
 
     if (now - last_touch_millis > LED_IDLE_MILLIS) {
-      startup_demo(5, 50);
       last_touch_millis = now;
+      pattern1_demo(5,10);
     }
     
-    // show how to handle touch events
+    // show how to handle touch "pressed" events
     //   start at a different location on the colorwheel depending on button
     if (touches[0].pressed()) { 
-      pos = 85*0; 
+      pos = 85*0;
     }
     else if (touches[1].pressed()) { 
-      pos = 85*1; 
+      pos = 85*1;
     }
     else if (touches[2].pressed()) { 
       pos = 85*2; 
@@ -149,11 +164,7 @@ void loop() {
       if (held) { 
         pos += 1;  // rotate color wheel while held
       }
-      for(int n=0; n < NUM_LEDS; n++) {   // rainbow across the LEDs
-        uint32_t c = wheel(pos + n*10);
-        uint8_t r = (c>>16) & 0xff, g = (c>>8) & 0xff, b = c&0xff;
-        pixel_set(n, r,g,b);
-      }
+      pattern2(pos, color_mode); // play pattern on touch
     }
     else {  // not touched
       // fade down LEDs on release
@@ -162,7 +173,7 @@ void loop() {
         pixel_fade_all(1);
       }
     }
-    
+
     pixel_show();
   }
 

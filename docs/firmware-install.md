@@ -90,7 +90,7 @@ arduino-cli upload --verbose --fqbn megaTinyCore:megaavr:atxy6:chip=816  \
 
 #### Shell script for batch programming
 
-Also see firmware/batch-program.sh
+Also see `firmware/batch_build_program.sh`
 
 ```sh
 #!/bin/bash
