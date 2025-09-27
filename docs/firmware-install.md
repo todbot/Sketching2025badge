@@ -42,7 +42,7 @@ In the Tools menu, set the chip parameters as:
 - Chip: "ATtiny816"
 - Clock: "8 MHz internal"
 - Printf: "minimal"
-- Programmer: "Serial UDPI - SLOW 57600"
+- Programmer: "Serial UDPI - SLOW 57600" or "Serial UDPI - 230400"
 - (leave everything else as default)
 
 When uploading, use "Upload Using Programmer" instead of the normal "Upload".
