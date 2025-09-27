@@ -1,3 +1,9 @@
+
+// note: expects the following defines:
+// NUM_LEDS  -- how many LEDs 
+// LED_BRIGHTNESS -- brightness, 0-255
+// NEOPIXEL_PIN -- gpio pin that LEDs are connected to
+
 extern volatile uint8_t led_buf[];
 
 // Set an LED at location n an specific RGB color
@@ -28,11 +34,9 @@ void pixel_fade_all(uint8_t amount) {
   }
 }
 
-// Display LED data to real LEDs
+// Push LED data to real LEDs
 void pixel_show() {
   noInterrupts();
   tinyNeoPixel_show(NEOPIXEL_PIN, NUM_LEDS*3, (uint8_t *)led_buf);
   interrupts();
 }
-
-
