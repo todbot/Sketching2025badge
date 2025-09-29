@@ -7,10 +7,11 @@
 #             --additional-urls https://drazzy.com/package_drazzy.com_index.json
 #
 # Run this code with:
-#  bash bash_build_program.sh
+#  bash ./bash_build_program.sh
+#   or 
+#  PORT=/dev/ttyUSB0 ./bash_build_program.sh
  
 #set -x
-#PORT=/dev/ttyUSB0
 PORT=${PORT:-/dev/tty.usbserial-0001}
 SKETCH_NAME=Sketching2025badge_attiny816
 BUILD_DIR=$(pwd)/build
