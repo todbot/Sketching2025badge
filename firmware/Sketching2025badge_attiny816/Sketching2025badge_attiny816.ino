@@ -21,7 +21,7 @@
 
 #define LED_BRIGHTNESS  80         // range 0-255, used by pixel_funcs.hs
 #define LED_UPDATE_MILLIS (15)     // how often to update the LEDs, affects fade down time
-#define LED_IDLE_MILLIS (10*1000)  // 30 seconds
+#define LED_IDLE_MILLIS (30*1000)  // 30 seconds
 #define TOUCH_THRESHOLD_ADJ (1.2)
 
 // note these pin numbers are the megatinycore numbers: 
@@ -105,8 +105,17 @@ void pattern_colorwheel(uint8_t pos, uint8_t wheel_step=50) {
   }
 }
 
+void pattern_sparkles(uint8_t pos) {
+  pixel_fade_all(3);
+  //r = 225; g = 25; b = 160; // a warmer white, sorta, but fades bad
+  r = g = b = 225;
+  if (pos%16 == 0 ) {  // slow it down
+    pixel_set(pos%NUM_LEDS, r,g,b);
+  }
+}
+
 void pattern_whitespin(uint8_t pos) {
-  r  = 255, b = 255, g = 255;
+  r  = g = b = 200; 
   for(uint8_t n=0; n < 3; n++) { 
     pixel_set(n, r,g,b);
     if (pos%3 == n) { 
@@ -156,30 +165,30 @@ void loop() {
     
     // show how to handle touch "pressed" events
     //   start at a different location on the colorwheel depending on button
-    if (touches[0].pressed()) { 
-      pos = 85*0;
+    if (touches[0].pressed()) {       // button 0  (top right)
+      pos = 0;
     }
-    else if (touches[1].pressed()) { 
-      pos = 85*1;
+    else if (touches[1].pressed()) {  // button 1  (bottom left)
+      pixel_fill(0,0,0);
     }
-    else if (touches[2].pressed()) { 
-      pos = 85*2;
+    else if (touches[2].pressed()) {  // button 2 (top left)
     }
 
     // act on touch state
     if (touched) {
       if (held) { 
-        pos++;  // rotate color wheel while held
+        pos++;  // while held, rotate "pos" value for color wheel or other uses
       }
-      if( touched == 0b100 ) { // button 3 pressed (top left)
-        pos++;  // gives the sense of it 'revving up'
-        pattern_whitespin(pos/4); // the /4 slows down the spinning;
+      if( touched == 0b100 ) {         // button 2 pressed (top left)
+        pos++;                         // gives the sense of it 'revving up'
+        pattern_whitespin(pos/4);      // the /4 slows down the spinning;
       }
-      else if( touched == 0b010 ) { // button 2 pressed (bottom left)
-        pattern_colorwheel(pos, 100); // play pattern on touch
+      else if( touched == 0b010 ) {    // button 1 pressed (bottom left)
+        pattern_colorwheel(pos, 100);  // play pattern on touch
       }
-      else {                         // button 1 pressed (top right)
-        pattern_colorwheel(pos, 10); // play pattern on touch
+      else if( touched == 0b001 ) {    // button 0 pressed (top right)
+        pos++;  
+        pattern_sparkles(pos);         // play pattern on touch
       }
     }
     else {  // if not touched
@@ -194,10 +203,10 @@ void loop() {
   }
 
   //debug
-  if( now - last_debug_time > 100 ) { 
-    last_debug_time = now;
-    MySerial.printf("pos: %d %d\r\n", pos, touched);
-  }
+  // if( now - last_debug_time > 100 ) { 
+  //   last_debug_time = now;
+  //   MySerial.printf("pos: %d %d\r\n", pos, touched);
+  // }
 
 } // loop()
 

@@ -1,8 +1,11 @@
 
-// note: expects the following defines:
-// NUM_LEDS  -- how many LEDs 
-// LED_BRIGHTNESS -- brightness, 0-255
-// NEOPIXEL_PIN -- gpio pin that LEDs are connected to
+// note: 
+// This code expects the following defines:
+//   NUM_LEDS  -- how many LEDs 
+//   LED_BRIGHTNESS -- brightness, 0-255
+//   NEOPIXEL_PIN -- gpio pin that LEDs are connected to
+// And the following global variable
+//   uint8_t led_buf[]
 
 extern volatile uint8_t led_buf[];
 
