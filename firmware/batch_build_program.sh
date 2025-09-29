@@ -11,7 +11,7 @@
  
 #set -x
 #PORT=/dev/ttyUSB0
-PORT=/dev/tty.usbserial-0001
+PORT=${PORT:-/dev/tty.usbserial-0001}
 SKETCH_NAME=Sketching2025badge_attiny816
 BUILD_DIR=$(pwd)/build
 HEX_FILE=./build/$SKETCH_NAME.ino.hex
@@ -24,7 +24,7 @@ arduino-cli compile  \
             --fqbn megaTinyCore:megaavr:atxy6:chip=816,printf=minimal,clock=8internal  \
             --build-path=$BUILD_DIR $SKETCH_NAME
 
-echo "Programming..."
+echo "Programming via port $PORT..."
 while [ 1 ] ; do
     read -rsn1 -p"Press any key program firmware"; echo
     
