@@ -51,7 +51,7 @@ See the "enclosure" directory for STEP/STL to print your own.
 
 * 1 Oct 2025 - production version
 
-  <img width=300 src="./docs/Sketching2025badge-render-front.jpg"><img width=300 src="./docs/Sketching2025badge-render-back.jpg">
+  <img width=350 src="./docs/Sketching2025badge-render-front.jpg"><img width=350 src="./docs/Sketching2025badge-render-back.jpg">
 
 * 16Aug2025 - Render0 - refaced TouchWheelSAO, basic graphics layout on 100mm (4") circular PCB, all components on back, routing incomplete
 
