@@ -2,16 +2,25 @@
 ## Notes:
 
 * 1 Oct 2025 - 48 badges mailed to Paris
+  - 20 had backers
+  - still printing remainders
 
-* 29 Sep 2025 - Start 3D printing protective "backer"
+* 29 Sep 2025 - Design & print protective "backer"
+  - Design for "fast" printing (~30 min each on my old Prusa mk2.5s)
+  - Start batch 3D printing
 
-* 29 Sep 2025 - "final" firmware and batch programming / testing
+* 29 Sep 2025 - "final" firmware cutoff
+  - batch program begin
+  - programmed 50 production boards
   - all boards passed basic programming & lighting test
 
-* 23 Sep 2025 - Badge PCBAs delivered from JLC
-  - badge final assembly: battery holder, SAO header
+* 23 Sep 2025 - Badge PCBAs received from JLC
+  - delivered from JLC via UPS
+  - badge final assembly: hand solder battery holder & SAO header
 
-* 11 Sep 2025 - PCBway wanted $1k for badges, ordered JLC instead
+* 11 Sep 2025 - PCBAs ordered
+  - PCBway wanted $1k for badges, even with sponsorship
+  - Ordered JLCPCB instead $344 (inc. shipping & tariffs)
 
 * 30 Aug 2025 - tested prototype0
   - All parts seem functional, both at 5V of programmer & 3V of AA batteries
