@@ -13,7 +13,7 @@ Badge for Sketching in Hardware 2025
 - Standard SAO pinout w/ I2C. Spare GPIO lines wired to UART TX/RX
 - ATtiny816-based, same as [seesaw boards](https://learn.adafruit.com/adafruit-attiny817-seesaw)
 - Easy compilation using standard Ardiuno toolchain and [megaTinyCore](https://github.com/SpenceKonde/megaTinyCore)
-- Programmable with UDPI with a USB-Serial adapter
+- Programmable with UDPI with a [USB-Serial adapter](https://amzn.to/3IKpMry)
 - Uses modified [TouchyTouch](https://github.com/todbot/TouchyTouch) captouch library, included
 
 

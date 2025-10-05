@@ -31,6 +31,6 @@
     - move LEDs out from under battery holder
     - change UDPI prog footprint to female SMD RA header socket
 
-* 21 Aug 2025 - prototype0 sent to JLC, with "21 Aug 2025" datestamp
+* 24 Aug 2025 - prototype0 sent to JLC, with "21 Aug 2025" datestamp
 
 * 16 Aug 2025 - basic graphics import test, got okay from leeborg
