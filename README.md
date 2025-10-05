@@ -2,6 +2,8 @@
 
 Badge for Sketching in Hardware 2025
 
+<img width=600 src="./docs/Sketching2025badge-photo1.jpg" >
+
 # Features
 
 - Three (3) capacitive touch pads
@@ -14,7 +16,6 @@ Badge for Sketching in Hardware 2025
 - Programmable with UDPI with a USB-Serial adapter
 - Uses modified [TouchyTouch](https://github.com/todbot/TouchyTouch) captouch library, included
 
-<img width=600 src="./docs/Sketching2025badge-photo1.jpg" >
 
 # ATtiny816 pins used
 
