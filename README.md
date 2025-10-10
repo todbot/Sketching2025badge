@@ -4,6 +4,9 @@ Badge for Sketching in Hardware 2025
 
 <img width=600 src="./docs/Sketching2025badge-photo1.jpg" >
 
+![sketching2025-badge-demoish-crop](https://github.com/user-attachments/assets/630ae1aa-f6c5-4d5e-8a49-124628b2d35a)
+
+
 # Features
 
 - Three (3) capacitive touch pads
@@ -31,6 +34,10 @@ Badge for Sketching in Hardware 2025
 | Sew / SAO UART TX   | PB2    | 7           |
 | Sew / SAO UART RX   | PB3    | 6           |
 
+
+# Programming the badge
+
+See [docs/firmware-install.md](docs/firmware-install.md)
 
 # Protective "Backer"
 

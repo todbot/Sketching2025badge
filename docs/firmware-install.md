@@ -47,6 +47,8 @@ In the Tools menu, set the chip parameters as:
 
 When uploading, use "Upload Using Programmer" instead of the normal "Upload".
 
+<img width=600 src="arduino-tools-setting.png">
+
 
 ### Arduino-CLI install
 
