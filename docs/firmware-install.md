@@ -17,9 +17,7 @@ Here is what a programmer setup could look like, using:
 * [cheap USB-to-serial dongle](https://amzn.to/47sMaxz)
 * [Pogo pin probe clip](https://www.digikey.com/short/3c99n5p9)
 
-[image tbd]
-
-<a href="./firmware-programming1.jpg"><img src="./firmware-programming1.jpg" width=400></a>
+<a href="./sketching2025badge-programming1.jpg"><img src="./sketching2025badge-programming1.jpg" width=400></a>
 
 
 ## Software, Compiling, Uploading
