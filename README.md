@@ -35,9 +35,11 @@ Badge for Sketching in Hardware 2025
 | Sew / SAO UART RX   | PB3    | 6           |
 
 
-# Programming the badge
+# Reprogramming the badge
 
-See [docs/firmware-install.md](docs/firmware-install.md)
+The default firmware is a fun little demo. But you can extend or replace it.
+
+For details see [docs/firmware-install.md](docs/firmware-install.md)
 
 But basically:
 - Open up Arduino, add http://drazzy.com/package_drazzy.com_index.json
