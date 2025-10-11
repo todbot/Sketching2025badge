@@ -39,6 +39,14 @@ Badge for Sketching in Hardware 2025
 
 See [docs/firmware-install.md](docs/firmware-install.md)
 
+But basically:
+- Open up Arduino, add http://drazzy.com/package_drazzy.com_index.json
+to the Board Manager URLs in Settings.
+- Load "firmware/Sketching2025badge_attiny816/Sketching2025badge_attiny816.ino"
+- Set the chip & programmer settings as in firmware-install.md
+- Upload code with "Sketch" -> "Upload Using Programmer"
+
+
 # Protective "Backer"
 
 Since the LEDs and MCU on the back don't have the protection of the battery
