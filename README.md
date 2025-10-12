@@ -53,7 +53,10 @@ to the Board Manager URLs in Settings.
 
 Since the LEDs and MCU on the back don't have the protection of the battery
 holders as standoffs, a 3d-printed "backer" is included with the badge.
-It snaps onto the badge using the sewable holes and can be removed by lifting it out.
+It snaps onto the badge using the sewable holes.
+It can be removed by lifting it out, if you want to sew the badge down or
+otherwise use the sewable holes.
+
 See the "enclosure" directory for STEP/STL to print your own.
 
 <img width=600 src="./docs/Sketching2025badge-backer-photo1.jpg" >
